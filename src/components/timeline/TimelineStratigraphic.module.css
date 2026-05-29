@@ -1,0 +1,130 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 6rem auto;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  display: flex;
+}
+
+.axis {
+  position: absolute;
+  left: clamp(1rem, 4vw, 3rem);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--bone);
+  z-index: 1;
+}
+
+.events {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.event {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  will-change: transform, opacity;
+}
+
+.yearNode {
+  position: absolute;
+  left: -2rem; /* Align with axis */
+  transform: translateX(-50%);
+  background-color: var(--paper);
+  border: 2px solid var(--bone);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  z-index: 2;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.event:hover .yearNode {
+  transform: translateX(-50%) scale(1.2);
+}
+
+.geological .yearNode { border-color: var(--moss); }
+.paleontological .yearNode { border-color: var(--amber); }
+.literary .yearNode { border-color: var(--camus-red); }
+.historical .yearNode { border-color: var(--rust); }
+
+.yearLabel {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+  min-width: 120px;
+  padding-top: 0.1rem;
+}
+
+.content {
+  flex: 1;
+  background-color: var(--paper);
+  border: 1px solid var(--bone);
+  padding: 1.5rem;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.geological .content::before { background-color: var(--moss); }
+.paleontological .content::before { background-color: var(--amber); }
+.literary .content::before { background-color: var(--camus-red); }
+.historical .content::before { background-color: var(--rust); }
+
+.event:hover .content {
+  box-shadow: var(--shadow-hover);
+  transform: translateX(5px);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.category {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .event {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .yearLabel {
+    padding-left: 1rem;
+  }
+}

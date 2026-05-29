@@ -1,0 +1,44 @@
+/* ============================================
+   FragmentReveal — Marginal annotation
+   ============================================ */
+
+.container {
+  position: relative;
+  max-width: 280px;
+  padding: 1.25rem 1.25rem 1rem;
+  background: var(--paper-dark);
+  transform: rotate(-2deg);
+  box-shadow: 0 2px 8px rgba(26, 22, 17, 0.06);
+  border: 1px solid rgba(212, 199, 168, 0.5);
+}
+
+/* Pin icon */
+.pin {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  color: var(--rust);
+  opacity: 0.7;
+}
+
+/* Text */
+.text {
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--rust);
+  margin-bottom: 0.5rem;
+}
+
+/* Source */
+.source {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+}

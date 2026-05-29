@@ -1,0 +1,113 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.stratum {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+  will-change: transform;
+}
+
+/* Base colors for strata */
+.layer0 { background-color: var(--ink); height: 100vh; top: 0; z-index: 1; }
+.layer1 { background-color: #2a241b; height: 80vh; top: 20vh; z-index: 2; border-top: 1px solid rgba(255,255,255,0.05); }
+.layer2 { background-color: var(--moss); height: 65vh; top: 35vh; z-index: 3; border-top: 1px solid rgba(255,255,255,0.1); }
+.layer3 { background-color: var(--bog); height: 45vh; top: 55vh; z-index: 4; border-top: 1px solid rgba(255,255,255,0.15); }
+.layer4 { background-color: var(--rust); height: 25vh; top: 75vh; z-index: 5; border-top: 1px solid rgba(255,255,255,0.2); }
+.layer5 { background-color: var(--amber); height: 10vh; top: 90vh; z-index: 6; border-top: 1px solid rgba(255,255,255,0.3); }
+
+/* Text styles */
+.titleContainer {
+  text-align: center;
+  color: #ffffff; /* Explicit white for max contrast */
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 100; /* Ensure it stays above strata */
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.5); /* Stronger shadow */
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bone);
+}
+
+.stratumContent {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 300px;
+}
+
+.stratumLabel {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.7;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background-color: var(--ink);
+  animation: scrollDown 2s infinite cubic-bezier(0.65, 0, 0.35, 1);
+  transform-origin: top;
+}
+
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}

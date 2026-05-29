@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.searchBox {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: var(--paper-dark);
+  border: 1px solid var(--bone);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 3rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchBox:focus {
+  border-color: var(--moss);
+  box-shadow: 0 0 0 2px rgba(58, 74, 42, 0.1);
+}
+
+.categoryGroup {
+  margin-bottom: 4rem;
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--bone);
+}
+
+.referenceList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.referenceItem {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  padding-left: 2rem;
+  text-indent: -2rem; /* Hanging indent for APA style */
+  padding-bottom: 1rem;
+  transition: color 0.2s ease;
+}
+
+.referenceItem:hover {
+  color: var(--ink);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 0;
+  font-family: var(--font-sans);
+  color: var(--text-light);
+  font-style: italic;
+}

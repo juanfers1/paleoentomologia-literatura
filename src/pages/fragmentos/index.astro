@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/ui/Navigation';
+import Footer from '../../components/ui/Footer';
+import { books } from '../../data/books';
+---
+
+<Layout title="Fragmentos" section="Literatura">
+  <Navigation client:load currentSection="005" />
+  
+  <main class="container container-reading" style="padding-top: 8rem; min-height: 80vh;">
+    <span class="stratum-label">ESTRATO IV: EL TEXTO</span>
+    <h1 class="mb-4" style="font-family: var(--font-display); font-size: 3rem; color: var(--ink);">Fragmentos Literarios</h1>
+    <p class="prose mb-12">
+      Recolección de las citas originales de Camus y Ernaux utilizadas como estratos literarios en este proyecto.
+    </p>
+
+    <div class="fragments-grid">
+      {books.map(book => (
+        <div class="author-section" style={`border-left: 4px solid var(--${book.accentColor}); padding-left: 2rem; margin-bottom: 4rem;`}>
+          <h2 style="font-family: var(--font-display); margin-bottom: 0.5rem;">{book.title}</h2>
+          <p style="font-family: var(--font-sans); color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; margin-bottom: 2rem;">{book.author}</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 2rem;">
+            {book.fragments.map(frag => (
+              <div class="fragment-card" style="background: var(--paper-dark); padding: 2rem; border: 1px solid var(--bone);">
+                <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; color: var(--ink); margin-bottom: 1rem;">"{frag.original}"</p>
+                <p style="font-family: var(--font-sans); font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">"{frag.translation}"</p>
+                <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-light);">FUENTE: {frag.source}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

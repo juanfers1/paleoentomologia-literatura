@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  section?: string;
+  accentColor?: string;
+}
+
+const {
+  title,
+  description = 'Ensayo digital que cruza la paleoentomología de los ecosistemas lagunares colombianos con L\'étranger de Camus y El lugar de Ernaux.',
+  section = '',
+  accentColor = '',
+} = Astro.props;
+
+const fullTitle = section ? `${section} — ${title}` : title;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- SEO -->
+    <meta name="author" content="Gonzalo Abril Ramírez" />
+    <meta name="keywords" content="paleoentomología, páramo, Frontino, Cocuy, Camus, Ernaux, literatura, ciencia, ensayo digital" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+
+    <title>{fullTitle}</title>
+  </head>
+  <body class:list={[accentColor && `accent-${accentColor}`]}>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/tokens.css';
+  @import '../styles/typography.css';
+  @import '../styles/globals.css';
+</style>

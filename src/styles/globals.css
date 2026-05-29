@@ -1,0 +1,322 @@
+/* ============================================
+   GLOBAL STYLES — Paleoentomología & Literatura
+   ============================================
+   Cuaderno de naturalista del siglo XXI
+   ============================================ */
+
+/* ── Paper Texture Background ── */
+body {
+  background-color: var(--paper);
+  background-image:
+    /* Subtle noise grain */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--moss);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+a:hover {
+  color: var(--amber);
+}
+
+/* ── Layout Containers ── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+}
+
+.container-reading {
+  max-width: var(--reading-width);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+.container-wide {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+}
+
+/* ── Section Spacing ── */
+.section {
+  padding: var(--section-gap) 0;
+  position: relative;
+}
+
+.section + .section {
+  border-top: 1px solid var(--bone);
+}
+
+/* ── Ornamental Separators ── */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: var(--block-gap) 0;
+  color: var(--text-light);
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to var(--direction, right),
+    transparent,
+    var(--bone),
+    transparent
+  );
+}
+
+.separator-ornament {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--bone);
+  line-height: 1;
+}
+
+/* ── Botanical Ornament ── */
+.ornament-botanical {
+  text-align: center;
+  margin: 3rem 0;
+  opacity: 0.4;
+  font-size: 1.5rem;
+  color: var(--moss);
+}
+
+.ornament-botanical::before {
+  content: '❧';
+}
+
+/* ── Stratum Labels ── */
+.stratum-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--bone);
+  background: var(--paper-dark);
+}
+
+.stratum-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ── Ink Stroke Decorations ── */
+.ink-stroke {
+  position: relative;
+}
+
+.ink-stroke::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.ink-stroke:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Image Placeholders (elegant slots) ── */
+.image-slot {
+  background: var(--paper-dark);
+  border: 1px dashed var(--bone);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-slot::before {
+  content: attr(data-label);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+}
+
+.image-slot::after {
+  content: attr(data-catalog);
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--text-light);
+  opacity: 0.6;
+}
+
+/* ── Paper Fold Mark ── */
+.paper-fold {
+  position: relative;
+}
+
+.paper-fold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    225deg,
+    var(--paper-dark) 50%,
+    transparent 50%
+  );
+  box-shadow: -2px 2px 4px rgba(26, 22, 17, 0.05);
+}
+
+/* ── Marginal Notes ── */
+.marginal-note {
+  position: absolute;
+  right: -12rem;
+  width: 10rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  border-left: 2px solid var(--bone);
+  padding-left: 0.75rem;
+}
+
+@media (max-width: 1200px) {
+  .marginal-note {
+    position: relative;
+    right: auto;
+    width: 100%;
+    margin: 1rem 0;
+    background: var(--paper-dark);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+  }
+}
+
+/* ── Fade In Animation (scroll reveal) ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-slow) var(--ease-out-expo),
+              transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Grid System ── */
+.grid-asymmetric {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* ── Color Accent Classes ── */
+.accent-camus { --accent: var(--camus-red); }
+.accent-ernaux { --accent: var(--ernaux-blue); }
+.accent-moss { --accent: var(--moss); }
+.accent-rust { --accent: var(--rust); }
+.accent-amber { --accent: var(--amber); }
+
+/* ── Focus Styles (Accessibility) ── */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bone);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light);
+}
+
+/* ── Responsive Utilities ── */
+@media (max-width: 768px) {
+  .section {
+    padding: calc(var(--section-gap) * 0.6) 0;
+  }
+
+  .pull-quote {
+    margin: 2rem -1rem;
+    padding: 2rem 1rem;
+    font-size: 1.35rem;
+  }
+
+  blockquote {
+    font-size: 1.125rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

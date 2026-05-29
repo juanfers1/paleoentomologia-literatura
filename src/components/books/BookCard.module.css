@@ -1,0 +1,116 @@
+.card {
+  position: relative;
+  background-color: var(--paper-dark);
+  border: 1px solid var(--bone);
+  border-radius: var(--radius-sm);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform var(--duration-normal) var(--ease-out-expo), box-shadow var(--duration-normal) var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 400px;
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateY(-5deg) translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.accentBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 8px;
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+.accent-camus-red {
+  background-color: var(--camus-red);
+}
+
+.accent-ernaux-blue {
+  background-color: var(--ernaux-blue);
+}
+
+.catalogNumber {
+  align-self: flex-end;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.coverContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.coverPlaceholder {
+  width: 140px;
+  height: 210px;
+  background-color: var(--paper);
+  border: 1px solid var(--bone);
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.coverTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.coverAuthor {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.details {
+  border-top: 1px solid var(--bone);
+  padding-top: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.author {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.meta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  display: flex;
+  justify-content: space-between;
+}

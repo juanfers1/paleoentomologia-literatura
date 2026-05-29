@@ -1,0 +1,143 @@
+.mapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 4rem auto;
+  aspect-ratio: 4/5;
+  background-color: var(--paper-dark);
+  border: 1px solid var(--bone);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(212, 199, 168, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 199, 168, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.mapSvg {
+  width: 80%;
+  height: 80%;
+  stroke: var(--bone);
+  stroke-width: 2;
+  fill: rgba(244, 241, 234, 0.5); /* var(--paper) with opacity */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+  transition: transform 0.3s ease;
+}
+
+.compass {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.marker {
+  position: absolute;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.markerDot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--amber);
+  border-radius: 50%;
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 4px rgba(218, 165, 32, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.marker:hover .markerDot {
+  transform: scale(1.5);
+  background-color: var(--rust);
+}
+
+.markerPulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: var(--amber);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--ink);
+  color: var(--paper);
+  padding: 1.5rem;
+  width: 250px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 20;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: var(--ink) transparent transparent transparent;
+}
+
+.tooltipTitle {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--bone);
+}
+
+.tooltipDept {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.tooltipMeta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 0.5rem;
+}
+
+.coordinates {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}

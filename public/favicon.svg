@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Fossil insect wing in amber -->
+  <rect width="32" height="32" rx="4" fill="#b8860b"/>
+  <g fill="none" stroke="#1a1611" stroke-width="0.8" opacity="0.7">
+    <!-- Wing outline -->
+    <path d="M8 24 Q10 8 24 6" stroke-width="1.2"/>
+    <!-- Wing veins -->
+    <path d="M10 22 Q12 14 20 10"/>
+    <path d="M12 22 Q14 16 22 12"/>
+    <path d="M14 22 Q15 18 18 16"/>
+    <!-- Cross veins -->
+    <path d="M11 18 Q13 16 15 18"/>
+    <path d="M14 14 Q16 12 18 14"/>
+    <!-- Body -->
+    <line x1="8" y1="24" x2="6" y2="28" stroke-width="1.5"/>
+  </g>
+  <!-- Amber glow -->
+  <circle cx="16" cy="16" r="10" fill="url(#glow)" opacity="0.15"/>
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#f4ede0"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+</svg>

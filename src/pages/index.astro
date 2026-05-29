@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/ui/Navigation';
+import Footer from '../components/ui/Footer';
+import HeroStratigraphic from '../components/hero/HeroStratigraphic';
+import BookShowcase from '../components/books/BookShowcase';
+---
+
+<Layout title="Inicio" section="Paleoentomología & Literatura">
+  <Navigation client:load currentSection="000" />
+  
+  <main>
+    <HeroStratigraphic client:load />
+
+    <section id="contexto" class="section container-reading">
+      <div class="separator">
+        <span class="separator-ornament">❧</span>
+      </div>
+      
+      <span class="stratum-label">ESTRATO I</span>
+      <h2 class="mt-4 mb-8">El contexto científico</h2>
+      
+      <div class="prose">
+        <p class="drop-cap">L</p>
+        <p>a paleoentomología es el estudio de los insectos fósiles. A través de ellos, los científicos reconstruyen paleoambientes y rastrean los profundos cambios climáticos que ha sufrido el planeta a lo largo de eones.</p>
+        
+        <p>En el contexto de la alta montaña colombiana —específicamente en el Páramo de Frontino (Antioquia) y la Sierra Nevada del Cocuy (Boyacá)—, los ecosistemas lagunares actúan como archivos formidables. Sus sedimentos guardan estratos de información biológica que nos permiten leer la historia de estas alturas.</p>
+        
+        <p>Pero hay otra forma de leer estos sedimentos. Una forma que cruza la precisión del entomólogo con la intuición literaria.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h3 class="text-center mb-12" style="font-family: var(--font-display); font-size: 2.5rem; color: var(--ink);">Las obras en diálogo</h3>
+      
+      <BookShowcase client:load />
+    </section>
+
+    <div class="ornament-botanical"></div>
+
+    <section class="section container-wide text-center" style="margin: 4rem auto; max-width: 800px;">
+      <h2 style="margin-bottom: 2rem;">El lugar y la indiferencia</h2>
+      <p class="prose mx-auto" style="text-align: center;">
+        Tanto en la ciencia como en la literatura, el lugar no es un escenario neutro, y la naturaleza no obedece a un propósito moral. A continuación, exploramos los cruces fundamentales entre estas disciplinas.
+      </p>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+  .mt-4 { margin-top: 1rem; }
+  .mb-8 { margin-bottom: 2rem; }
+  .mb-12 { margin-bottom: 3rem; }
+  .text-center { text-align: center; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+</style>

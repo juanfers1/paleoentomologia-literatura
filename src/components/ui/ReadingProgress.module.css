@@ -1,0 +1,82 @@
+.progressContainer {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: var(--z-sticky);
+  height: 60vh;
+  min-height: 400px;
+}
+
+.track {
+  width: 2px;
+  flex: 1;
+  background-color: var(--bone);
+  position: relative;
+  border-radius: 1px;
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--amber);
+  border-radius: 1px;
+  transition: height 0.1s ease;
+}
+
+.sections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sectionDot {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--paper);
+  border: 2px solid var(--bone);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.sectionDot.active {
+  border-color: var(--amber);
+  background-color: var(--amber);
+}
+
+.sectionLabel {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.sectionDot.active .sectionLabel {
+  opacity: 1;
+  color: var(--ink);
+}
+
+@media (max-width: 1024px) {
+  .progressContainer {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/ui/Navigation';
+import Footer from '../../components/ui/Footer';
+import BibliographyList from '../../components/references/BibliographyList';
+import { references } from '../../data/references';
+---
+
+<Layout title="Referencias" section="Paleoentomología & Literatura">
+  <Navigation client:load currentSection="004" />
+  
+  <main class="container container-reading" style="padding-top: 8rem; min-height: 80vh;">
+    <span class="stratum-label">ESTRATO V: EL ARCHIVO</span>
+    <h1 class="mb-4" style="font-family: var(--font-display); font-size: 3rem; color: var(--ink);">Referencias</h1>
+    <p class="prose mb-12">
+      Bibliografía consultada para la construcción de este ensayo interactivo, 
+      abarcando tanto las fuentes científicas de la paleoentomología andina como 
+      las obras literarias fundamentales de Camus y Ernaux.
+    </p>
+
+    <BibliographyList client:visible references={references} />
+    
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-12 { margin-bottom: 3rem; }
+</style>

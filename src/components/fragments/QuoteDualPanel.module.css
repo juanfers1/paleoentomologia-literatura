@@ -1,0 +1,109 @@
+/* ============================================
+   QuoteDualPanel — Quote + science side by side
+   ============================================ */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 3rem 0;
+  position: relative;
+}
+
+/* Left panel — Quote */
+.quotePanel {
+  padding: 2.5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quotePanelCamus {
+  border-left: 4px solid var(--camus-red);
+}
+
+.quotePanelErnaux {
+  border-left: 4px solid var(--ernaux-blue);
+}
+
+/* Decorative quote mark */
+.quoteMark {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  opacity: 0.12;
+  user-select: none;
+  pointer-events: none;
+}
+
+.quoteMarkCamus {
+  color: var(--camus-red);
+}
+
+.quoteMarkErnaux {
+  color: var(--ernaux-blue);
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteAttribution {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+}
+
+/* Right panel — Science */
+.sciencePanel {
+  padding: 2.5rem 2rem;
+  background: var(--paper-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scienceText {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.scienceSource {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-light);
+  margin-top: 1rem;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .quotePanel {
+    padding: 2rem 1.5rem;
+  }
+
+  .sciencePanel {
+    padding: 2rem 1.5rem;
+  }
+}

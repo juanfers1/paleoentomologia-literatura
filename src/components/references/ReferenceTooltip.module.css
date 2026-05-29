@@ -1,0 +1,72 @@
+/* ============================================
+   ReferenceTooltip — Inline superscript with citation
+   ============================================ */
+
+.wrapper {
+  display: inline;
+  position: relative;
+}
+
+.number {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--camus-red);
+  vertical-align: super;
+  cursor: pointer;
+  padding: 0 0.15em;
+  transition: color 0.15s ease;
+  text-decoration: none;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+.number:hover {
+  color: var(--ink);
+}
+
+.number:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper-dark);
+  border: 1px solid var(--bone);
+  box-shadow: var(--shadow-card);
+  padding: 0.75rem 1rem;
+  min-width: 260px;
+  max-width: 360px;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.tooltipText {
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text);
+  /* APA hanging indent */
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+/* Arrow */
+.arrow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: var(--paper-dark);
+  border-right: 1px solid var(--bone);
+  border-bottom: 1px solid var(--bone);
+}
