@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://tu-usuario.github.io',
+  site: 'https://juanfers1.github.io',
   base: '/paleoentomologia-literatura',
   trailingSlash: 'always',
   integrations: [react()],
