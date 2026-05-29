@@ -12,7 +12,7 @@ export const books = [
     translatedYear: "2012",
     synopsis: "Meursault, un oficinista en Argel, recibe la noticia de la muerte de su madre. Su aparente indiferencia ante este hecho y ante la vida misma culmina en un asesinato absurdo en una playa bajo el sol implacable. La novela explora la filosofía del absurdo y la condición humana frente a un universo irracional e indiferente.",
     accentColor: "camus-red",
-    coverImage: "/images/books/letranger-cover.jpg",
+    coverImage: `${import.meta.env.BASE_URL}camus.jpeg`,
     authorImage: "/images/books/camus-portrait.jpg",
     fragments: [
       {
@@ -45,7 +45,7 @@ export const books = [
     translatedYear: "2002",
     synopsis: "Tras la muerte de su padre, antiguo obrero convertido en modesto comerciante de provincias, la narradora emprende una investigación clínica sobre su figura. Ernaux utiliza una «escritura plana», sin adornos, para diseccionar la distancia cultural y de clase que la educación y el ascenso social abrieron irremediablemente entre ambos.",
     accentColor: "ernaux-blue",
-    coverImage: "/images/books/el-lugar-cover.jpg",
+    coverImage: `${import.meta.env.BASE_URL}ernaux.jpeg`,
     authorImage: "/images/books/ernaux-portrait.jpg",
     fragments: [
       {

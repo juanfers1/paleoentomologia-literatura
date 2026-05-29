@@ -9,6 +9,7 @@ interface BookCardProps {
   publisher: string;
   accentColor: 'camus-red' | 'ernaux-blue';
   catalogNumber: string;
+  coverImage?: string;
   onOpen?: () => void;
   index?: number;
 }
@@ -20,6 +21,7 @@ export default function BookCard({
   publisher, 
   accentColor, 
   catalogNumber, 
+  coverImage,
   onOpen,
   index = 0
 }: BookCardProps) {
@@ -36,10 +38,14 @@ export default function BookCard({
       <div className={styles.catalogNumber}>{catalogNumber}</div>
       
       <div className={styles.coverContainer}>
-        <div className={styles.coverPlaceholder}>
-          <div className={styles.coverTitle}>{title}</div>
-          <div className={styles.coverAuthor}>{author}</div>
-        </div>
+        {coverImage ? (
+          <img src={coverImage} alt={`Portada de ${title}`} className={styles.coverImage} />
+        ) : (
+          <div className={styles.coverPlaceholder}>
+            <div className={styles.coverTitle}>{title}</div>
+            <div className={styles.coverAuthor}>{author}</div>
+          </div>
+        )}
       </div>
       
       <div className={styles.details}>

@@ -20,6 +20,7 @@ export default function BookShowcase() {
             publisher={book.publisher}
             accentColor={book.accentColor as 'camus-red' | 'ernaux-blue'}
             catalogNumber={`CAT. B-${index + 1}`}
+            coverImage={book.coverImage}
             index={index}
             onOpen={() => setSelectedBookId(book.id)}
           />
