@@ -7,10 +7,11 @@ const crosses = defineCollection({
     title: z.string(),
     author: z.enum(['camus', 'ernaux']),
     number: z.number(),
-    scientificConcept: z.string(),
+    filmConcept: z.string(),
     literaryConcept: z.string(),
     camusQuote: z.string().optional(),
     ernauxQuote: z.string().optional(),
+    filmScene: z.string().optional(),
     crossAnalysis: z.string(),
     catalogNumber: z.string(),
     references: z.array(z.object({

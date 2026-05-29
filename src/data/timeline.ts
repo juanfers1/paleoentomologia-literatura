@@ -1,14 +1,14 @@
 // src/data/timeline.ts
-// Línea temporal que integra eventos geológicos, paleontológicos, literarios e históricos
+// Línea temporal que integra eventos de la película, literarios e históricos
 
 export type TimelineCategory =
-  | 'geological'
-  | 'paleontological'
+  | 'film'
+  | 'friendship'
   | 'literary'
   | 'historical';
 
 export interface TimelineEvent {
-  year: number; // Negativo para años antes del presente (BP)
+  year: number;
   label: string;
   description: string;
   category: TimelineCategory;
@@ -16,74 +16,32 @@ export interface TimelineEvent {
 }
 
 export const timeline: TimelineEvent[] = [
-  // === Eventos geológicos y paleontológicos ===
+  // === Eventos de la película ===
   {
-    year: -50000,
-    label: 'Inicio del registro sedimentario de Frontino',
+    year: 1993,
+    label: 'Accidente de Philippe',
     description:
-      'Las lagunas glaciares del Páramo de Frontino comienzan a acumular sedimentos que preservarán el registro paleoambiental de los próximos 50.000 años.',
-    category: 'geological',
+      'Philippe Pozzo di Borgo, en cuya historia real se basa la película, sufre un accidente de parapente que lo deja tetrapléjico. La película Iniciará con este evento como punto de quiebre.',
+    category: 'film',
   },
   {
-    year: -30000,
-    label: 'Registro sedimentario del Cocuy',
+    year: 2010,
+    label: 'Encuentro Philippe — Driss (historia real)',
     description:
-      'Los sedimentos más antiguos datados en las lagunas de la Sierra Nevada del Cocuy documentan condiciones glaciares plenas del Pleistoceno tardío.',
-    category: 'geological',
+      'Philippe Pozzo di Borgo contrata a Abdel Sellou, un joven de origen argelino del que nacerá el personaje de Driss. La relación auténtica entre ambos inspirará la película.',
+    category: 'film',
+    relatedCross: 'camus-01-autenticidad',
   },
   {
-    year: -21000,
-    label: 'Último Máximo Glacial (UMG)',
+    year: 2011,
+    label: 'Estreno de Intouchables',
     description:
-      'El Último Máximo Glacial alcanza su punto culminante. Los glaciares de la Sierra Nevada del Cocuy descienden hasta los 3.200 m. Los páramos se contraen y la vegetación de alta montaña se desplaza a altitudes menores.',
-    category: 'geological',
-    relatedCross: 'camus-02-indiferencia',
-  },
-  {
-    year: -14000,
-    label: 'Inicio de la deglaciación andina',
-    description:
-      'El calentamiento post-glacial inicia la retracción de los glaciares andinos. Los páramos comienzan a expandirse altitudinalmente. Nuevos hábitats disponibles para la colonización por insectos.',
-    category: 'paleontological',
-  },
-  {
-    year: -11700,
-    label: 'Inicio del Holoceno',
-    description:
-      'Transición del Pleistoceno al Holoceno. Las condiciones climáticas se estabilizan. Los ecosistemas paramunos adquieren una configuración más cercana a la actual.',
-    category: 'geological',
-  },
-  {
-    year: -8000,
-    label: 'Óptimo climático del Holoceno temprano',
-    description:
-      'Período de temperaturas más cálidas que las actuales. Los límites superiores del bosque ascienden. Las comunidades de insectos del páramo se reorganizan en respuesta al calentamiento.',
-    category: 'paleontological',
-    relatedCross: 'camus-01-sol',
-  },
-  {
-    year: -5000,
-    label: 'Estabilización de los páramos modernos',
-    description:
-      'Los ecosistemas paramunos alcanzan una configuración similar a la actual. Las comunidades de insectos reflejan ensamblajes comparables a los modernos en los registros sedimentarios.',
-    category: 'paleontological',
-  },
-  {
-    year: -2000,
-    label: 'Primeras evidencias de impacto humano',
-    description:
-      'Incremento de partículas de carbón en los sedimentos del páramo indica quemas asociadas a actividades humanas. Primeras alteraciones antrópicas detectables en el registro paleoecológico.',
-    category: 'historical',
-  },
-  {
-    year: -500,
-    label: 'Pequeña Edad de Hielo (inicio)',
-    description:
-      'Enfriamiento climático global. Los glaciares andinos avanzan nuevamente. Las comunidades de insectos del páramo experimentan reorganizaciones asociadas al descenso de temperaturas.',
-    category: 'geological',
+      'La película se estrena en Francia el 2 de noviembre de 2011. Dirigida por Olivier Nakache y Éric Toledano, se convierte en uno de los mayores éxitos del cine francés.',
+    category: 'film',
+    relatedCross: 'ernaux-01-distancia',
   },
 
-  // === Eventos literarios e históricos ===
+  // === Eventos literarios ===
   {
     year: 1913,
     label: 'Nacimiento de Albert Camus',
@@ -100,11 +58,11 @@ export const timeline: TimelineEvent[] = [
   },
   {
     year: 1942,
-    label: 'Publicación de L\'étranger',
+    label: "Publicación de L'étranger",
     description:
-      'Albert Camus publica L\'étranger (El extranjero) en Gallimard. La novela se convertirá en una de las obras más leídas del siglo XX y en el texto fundacional de la literatura del absurdo.',
+      "Albert Camus publica L'étranger (El extranjero) en Gallimard. La novela se convertirá en una de las obras más leídas del siglo XX y en el texto fundacional de la literatura del absurdo.",
     category: 'literary',
-    relatedCross: 'camus-03-extranjero',
+    relatedCross: 'camus-03-libertad',
   },
   {
     year: 1957,
@@ -117,24 +75,16 @@ export const timeline: TimelineEvent[] = [
     year: 1960,
     label: 'Muerte de Albert Camus',
     description:
-      'Albert Camus muere el 4 de enero en un accidente automovilístico en Villeblevin, Francia, a los 46 años. En su cartera se encontró el manuscrito inacabado de Le premier homme.',
+      'Albert Camus muere el 4 de enero en un accidente automovilístico en Villeblevin, Francia, a los 46 años.',
     category: 'literary',
-    relatedCross: 'camus-04-muerte',
-  },
-  {
-    year: 1967,
-    label: 'Thomas van der Hammen: estudios palinológicos',
-    description:
-      'Thomas van der Hammen consolida sus estudios pioneros sobre la palinología y paleoecología de los Andes colombianos, estableciendo las bases para la reconstrucción de los cambios vegetacionales de alta montaña.',
-    category: 'paleontological',
   },
   {
     year: 1979,
     label: 'Bourdieu: La distinction',
     description:
-      'Pierre Bourdieu publica La distinction: Critique sociale du jugement, obra fundamental para comprender las dinámicas de clase que Ernaux explorará en La place.',
+      'Pierre Bourdieu publica La distinction: Critique sociale du jugement, obra fundamental para comprender las dinámicas de clase que Ernaux explorará en La place y que la película escenifica en cada interacción entre Philippe y Driss.',
     category: 'historical',
-    relatedCross: 'ernaux-03-distancia',
+    relatedCross: 'ernaux-03-codigos',
   },
   {
     year: 1983,
@@ -142,7 +92,7 @@ export const timeline: TimelineEvent[] = [
     description:
       'Annie Ernaux publica La place (El lugar) en Gallimard. El libro, escrito en «écriture plate», es un retrato sociológico del padre y una reflexión sobre la distancia de clase producida por la educación.',
     category: 'literary',
-    relatedCross: 'ernaux-01-lugar',
+    relatedCross: 'ernaux-01-distancia',
   },
   {
     year: 1984,
@@ -152,19 +102,12 @@ export const timeline: TimelineEvent[] = [
     category: 'literary',
   },
   {
-    year: 2004,
-    label: 'Coope: estabilidad de especies de insectos',
+    year: 2011,
+    label: 'El fenómeno Intouchables',
     description:
-      'G. R. Coope publica su influyente estudio sobre la estabilidad morfológica de especies de coleópteros a lo largo de millones de años, demostrando que muchas especies cuaternarias son identificables con especies vivientes.',
-    category: 'paleontological',
-    relatedCross: 'camus-02-indiferencia',
-  },
-  {
-    year: 2010,
-    label: 'Elias: Advances in Quaternary Entomology',
-    description:
-      'Scott A. Elias publica Advances in Quaternary Entomology, obra de referencia que sintetiza el estado del arte de la paleoentomología cuaternaria a nivel global.',
-    category: 'paleontological',
+      'La película recauda más de 400 millones de dólares en taquilla mundial y se convierte en la película francesa más vista internacionalmente. Su éxito trasciende fronteras de clase y cultura.',
+    category: 'film',
+    relatedCross: 'ernaux-04-transfuga',
   },
   {
     year: 2022,
@@ -172,7 +115,7 @@ export const timeline: TimelineEvent[] = [
     description:
       'Annie Ernaux recibe el Premio Nobel de Literatura «por el coraje y la agudeza clínica con que descubre las raíces, los extrañamientos y las restricciones colectivas de la memoria personal».',
     category: 'literary',
-    relatedCross: 'ernaux-04-memoria',
+    relatedCross: 'ernaux-02-lugar-destino',
   },
 ];
 

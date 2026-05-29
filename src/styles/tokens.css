@@ -1,7 +1,7 @@
 /* ============================================
-   DESIGN TOKENS — Paleoentomología & Literatura
+   DESIGN TOKENS — Intouchables & Literatura
    ============================================
-   Cuaderno de naturalista del siglo XXI
+   Contraste de dos mundos: Philippe (azul) / Driss (naranja)
    cruzado con edición literaria.
    ============================================ */
 
@@ -10,16 +10,20 @@
 /* ── Custom Theme ── */
 @theme {
   /* Fondos */
-  --color-paper: #f4ede0;
-  --color-paper-dark: #ebe2d0;
-  --color-ink: #1a1611;
+  --color-paper: #f5f1ea;
+  --color-paper-dark: #ebe3d5;
+  --color-ink: #1a1a1a;
 
-  /* Acentos naturales */
+  /* Acentos — los dos mundos */
+  --color-philippe: #2c3e50;
+  --color-driss: #d35400;
+  --color-gold: #b8860b;
+
+  /* Neutros */
+  --color-bone: #d4c7a8;
+  --color-rust: #a0522d;
   --color-moss: #3a4a2a;
   --color-bog: #5a6b3a;
-  --color-rust: #a0522d;
-  --color-amber: #b8860b;
-  --color-bone: #d4c7a8;
 
   /* Acentos literarios */
   --color-camus-red: #8b3a3a;
@@ -48,9 +52,9 @@
   --radius-lg: 8px;
 
   /* Shadows */
-  --shadow-card: 0 2px 8px rgba(26, 22, 17, 0.08);
-  --shadow-modal: 0 8px 32px rgba(26, 22, 17, 0.2);
-  --shadow-hover: 0 4px 16px rgba(26, 22, 17, 0.12);
+  --shadow-card: 0 2px 8px rgba(26, 26, 26, 0.08);
+  --shadow-modal: 0 8px 32px rgba(26, 26, 26, 0.2);
+  --shadow-hover: 0 4px 16px rgba(26, 26, 26, 0.12);
 
   /* Z-index scale */
   --z-base: 1;
@@ -71,16 +75,20 @@
 /* ── CSS Custom Properties (for React components) ── */
 :root {
   /* Fondos */
-  --paper: #f4ede0;
-  --paper-dark: #ebe2d0;
-  --ink: #1a1611;
+  --paper: #f5f1ea;
+  --paper-dark: #ebe3d5;
+  --ink: #1a1a1a;
 
-  /* Acentos naturales */
+  /* Acentos — los dos mundos */
+  --philippe: #2c3e50;
+  --driss: #d35400;
+  --gold: #b8860b;
+
+  /* Neutros */
+  --bone: #d4c7a8;
+  --rust: #a0522d;
   --moss: #3a4a2a;
   --bog: #5a6b3a;
-  --rust: #a0522d;
-  --amber: #b8860b;
-  --bone: #d4c7a8;
 
   /* Acentos literarios */
   --camus-red: #8b3a3a;
@@ -102,9 +110,9 @@
   --max-width: 1400px;
 
   /* Shadows */
-  --shadow-card: 0 2px 8px rgba(26, 22, 17, 0.08);
-  --shadow-modal: 0 8px 32px rgba(26, 22, 17, 0.2);
-  --shadow-hover: 0 4px 16px rgba(26, 22, 17, 0.12);
+  --shadow-card: 0 2px 8px rgba(26, 26, 26, 0.08);
+  --shadow-modal: 0 8px 32px rgba(26, 26, 26, 0.2);
+  --shadow-hover: 0 4px 16px rgba(26, 26, 26, 0.12);
 
   /* Transitions */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

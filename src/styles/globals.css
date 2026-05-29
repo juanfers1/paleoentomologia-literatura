@@ -1,7 +1,7 @@
 /* ============================================
-   GLOBAL STYLES — Paleoentomología & Literatura
+   GLOBAL STYLES — Intouchables & Literatura
    ============================================
-   Cuaderno de naturalista del siglo XXI
+   Contraste de dos mundos: Philippe / Driss
    ============================================ */
 
 /* ── Paper Texture Background ── */
@@ -33,13 +33,13 @@ img, video, svg {
 }
 
 a {
-  color: var(--moss);
+  color: var(--philippe);
   text-decoration: none;
   transition: color var(--duration-fast) ease;
 }
 
 a:hover {
-  color: var(--amber);
+  color: var(--driss);
 }
 
 /* ── Layout Containers ── */
@@ -102,20 +102,20 @@ a:hover {
   line-height: 1;
 }
 
-/* ── Botanical Ornament ── */
+/* ── Ornament ── */
 .ornament-botanical {
   text-align: center;
   margin: 3rem 0;
   opacity: 0.4;
   font-size: 1.5rem;
-  color: var(--moss);
+  color: var(--gold);
 }
 
 .ornament-botanical::before {
   content: '❧';
 }
 
-/* ── Stratum Labels ── */
+/* ── Section Labels ── */
 .stratum-label {
   display: inline-flex;
   align-items: center;
@@ -264,13 +264,15 @@ a:hover {
 /* ── Color Accent Classes ── */
 .accent-camus { --accent: var(--camus-red); }
 .accent-ernaux { --accent: var(--ernaux-blue); }
+.accent-philippe { --accent: var(--philippe); }
+.accent-driss { --accent: var(--driss); }
+.accent-gold { --accent: var(--gold); }
 .accent-moss { --accent: var(--moss); }
 .accent-rust { --accent: var(--rust); }
-.accent-amber { --accent: var(--amber); }
 
 /* ── Focus Styles (Accessibility) ── */
 :focus-visible {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--driss);
   outline-offset: 2px;
 }
 

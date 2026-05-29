@@ -2,7 +2,7 @@ export interface Reference {
   id: string;
   type: 'book' | 'chapter' | 'conference' | 'journal';
   citation: string;
-  category: 'primary-literary' | 'critical-literary' | 'scientific' | 'methodological';
+  category: 'primary-literary' | 'critical-literary' | 'film' | 'methodological';
   year: string;
 }
 
@@ -32,6 +32,13 @@ export const references: Reference[] = [
     citation: "Camus, A. (1942). Le mythe de Sisyphe. Gallimard."
   },
   {
+    id: 'bourdieu-1979',
+    type: 'book',
+    category: 'critical-literary',
+    year: '1979',
+    citation: "Bourdieu, P. (1979). La distinction: Critique sociale du jugement. Éditions de Minuit."
+  },
+  {
     id: 'moulin-1999',
     type: 'journal',
     category: 'critical-literary',
@@ -39,34 +46,13 @@ export const references: Reference[] = [
     citation: "Moulin, R. (1999). L'écriture plate chez Annie Ernaux. Revue des Lettres Modernes, 13-28."
   },
   
-  // Scientific
+  // Film
   {
-    id: 'coope-2004',
-    type: 'journal',
-    category: 'scientific',
-    year: '2004',
-    citation: "Coope, G. R. (2004). Several million years of stability among insect species because of, or in spite of, Ice Age climatic instability? Philosophical Transactions of the Royal Society of London B, 359, 209–214."
-  },
-  {
-    id: 'rangel-2000',
+    id: 'nakache-toledano-2011',
     type: 'book',
-    category: 'scientific',
-    year: '2000',
-    citation: "Rangel-Ch., J. O. (Ed.). (2000). Colombia diversidad biótica III: La región de vida paramuna. Universidad Nacional de Colombia."
-  },
-  {
-    id: 'vanderhammen-1986',
-    type: 'chapter',
-    category: 'scientific',
-    year: '1986',
-    citation: "van der Hammen, T., & Cleef, A. M. (1986). Development of the high Andean páramo flora and vegetation. En F. Vuilleumier & M. Monasterio (Eds.), High altitude tropical biogeography (pp. 153–201). Oxford University Press."
-  },
-  {
-    id: 'abril-2023',
-    type: 'conference',
-    category: 'scientific',
-    year: '2023',
-    citation: "Abril Ramírez, G. (2023). Paleoentomología de los ecosistemas lagunares de la alta montaña colombiana. Páramo de Frontino y Sierra Nevada del Cocuy. [Ponencia]. Facultad de Ciencias Agrarias, Universidad Nacional de Colombia."
+    category: 'film',
+    year: '2011',
+    citation: "Nakache, O., & Toledano, É. (Directores). (2011). Intouchables [Película]. Quad Productions; Gaumont. [VERIFICAR créditos de producción]"
   },
 
   // Methodological

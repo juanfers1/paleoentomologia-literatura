@@ -1,5 +1,5 @@
 /* ============================================
-   TYPOGRAPHY — Paleoentomología & Literatura
+   TYPOGRAPHY — Intouchables & Literatura
    ============================================
    Display:  Cormorant Garamond (700)
    Serif:    EB Garamond (400, 400i, 600)
@@ -247,6 +247,6 @@ code, .mono {
 
 /* ── Selection ── */
 ::selection {
-  background-color: var(--amber);
+  background-color: var(--driss);
   color: var(--paper);
 }
