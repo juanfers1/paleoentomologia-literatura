@@ -12,7 +12,7 @@ interface Reference {
 }
 
 interface CrossReferenceProps {
-  scientificContent: string;
+  filmContent: string;
   literaryContent: string;
   quote?: string;
   analysis: string;
@@ -22,7 +22,7 @@ interface CrossReferenceProps {
 }
 
 export default function CrossReference({
-  scientificContent,
+  filmContent,
   literaryContent,
   quote,
   analysis,
@@ -75,8 +75,8 @@ export default function CrossReference({
         </div>
 
         <div className={`${styles.panel} ${styles.sciencePanel}`} ref={leftPanelRef}>
-          <div className={styles.panelLabel}>Registro Científico</div>
-          <div className={styles.content}>{scientificContent}</div>
+          <div className={styles.panelLabel}>Escena de la película</div>
+          <div className={styles.content}>{filmContent}</div>
         </div>
 
         <div className={`${styles.panel} ${styles.literaryPanel} ${styles[author]}`} ref={rightPanelRef}>

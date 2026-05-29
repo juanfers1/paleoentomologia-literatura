@@ -1,0 +1,200 @@
+.mapContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  min-height: 500px;
+  background: var(--paper-dark);
+  border: 1px solid var(--bone);
+  overflow: hidden;
+}
+
+.mapGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.svgMap {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: var(--driss);
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 2px solid var(--paper);
+  transition: transform 0.3s ease;
+}
+
+.marker.active .dot {
+  transform: scale(1.5);
+  background: var(--philippe);
+}
+
+.pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: var(--driss);
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  border: 1px solid var(--bone);
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  z-index: 20;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--paper) transparent transparent transparent;
+}
+
+.tooltip h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.coordinates {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tooltip p {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.dataGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  background: var(--paper-dark);
+  padding: 0.75rem;
+}
+
+.dataItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataLabel {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.dataValue {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.tooltipFooter {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border-top: 1px dotted var(--bone);
+  padding-top: 0.5rem;
+  font-style: italic;
+}
+
+.legend {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(250, 248, 245, 0.9);
+  padding: 1rem;
+  border: 1px solid var(--bone);
+  backdrop-filter: blur(4px);
+}
+
+.legendTitle {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+
+.legendItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .tooltip {
+    width: 250px;
+  }
+  .legend {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

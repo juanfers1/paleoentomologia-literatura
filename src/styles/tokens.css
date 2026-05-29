@@ -1,8 +1,8 @@
 /* ============================================
    DESIGN TOKENS — Intouchables & Literatura
    ============================================
-   Contraste de dos mundos: Philippe (azul) / Driss (naranja)
-   cruzado con edición literaria.
+   Cuaderno de cine y literatura
+   cruzado con apreciación del arte.
    ============================================ */
 
 @import "tailwindcss";
@@ -24,6 +24,10 @@
   --color-rust: #a0522d;
   --color-moss: #3a4a2a;
   --color-bog: #5a6b3a;
+
+  /* Acentos de la película — los dos mundos */
+  --color-philippe: #2c3e50;
+  --color-driss: #d35400;
 
   /* Acentos literarios */
   --color-camus-red: #8b3a3a;
@@ -89,6 +93,10 @@
   --rust: #a0522d;
   --moss: #3a4a2a;
   --bog: #5a6b3a;
+
+  /* Acentos de la película — los dos mundos */
+  --philippe: #2c3e50;
+  --driss: #d35400;
 
   /* Acentos literarios */
   --camus-red: #8b3a3a;

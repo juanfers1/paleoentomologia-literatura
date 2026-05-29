@@ -15,21 +15,20 @@ const sortedCrosses = crosses.sort((a, b) => {
 });
 ---
 
-<Layout title="Los Cruces" section="Paleoentomología & Literatura">
+<Layout title="Los Cruces" section="Intouchables & Literatura">
   <Navigation client:load currentSection="001" />
   
   <main class="container" style="padding-top: 8rem;">
-    <h1 class="mb-4">Los Cruces Literarios</h1>
+    <h1 class="mb-4">Los Cruces</h1>
     <p class="prose mb-12">
-      Ocho puntos de convergencia entre los ecosistemas lagunares de la alta montaña colombiana 
-      y la literatura francesa contemporánea.
+      Ocho puntos de convergencia entre la película <em>Intouchables</em> y la literatura francesa contemporánea.
     </p>
 
     <div class="crosses-list">
       {sortedCrosses.map(cross => (
         <CrossReference 
           client:visible
-          scientificContent={cross.data.scientificConcept}
+          filmContent={cross.data.filmConcept}
           literaryContent={cross.data.literaryConcept}
           quote={cross.data.camusQuote || cross.data.ernauxQuote}
           analysis={cross.data.crossAnalysis}

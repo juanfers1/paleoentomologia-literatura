@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/ui/Navigation';
+import Footer from '../../components/ui/Footer';
+import LocationContrast from '../../components/map/LocationContrast';
+import TimelineFriendship from '../../components/timeline/TimelineFriendship';
+import SceneGallery from '../../components/gallery/SceneGallery';
+---
+
+<Layout title="Los Escenarios" section="Intouchables">
+  <Navigation client:load currentSection="002" />
+  
+  <main class="container" style="padding-top: 8rem;">
+    <div class="text-center">
+      <span class="stratum-label">ESCENA II: LOS MUNDOS</span>
+      <h1 class="mb-4" style="font-family: var(--font-display); font-size: 3rem; color: var(--ink);">Los Escenarios</h1>
+      <p class="prose mx-auto mb-12">
+        La distancia entre la mansión del Distrito 7 y la banlieue es abismal.
+        Aquí exploramos la geografía, el tiempo y las escenas clave del encuentro.
+      </p>
+    </div>
+
+    <!-- The Map -->
+    <LocationContrast client:visible />
+
+    <div class="separator">
+      <span class="separator-ornament">❧</span>
+    </div>
+
+    <!-- The Timeline -->
+    <section class="section">
+      <h2 class="text-center mb-12" style="font-family: var(--font-display);">Línea Temporal</h2>
+      <TimelineFriendship client:visible />
+    </section>
+
+    <div class="separator">
+      <span class="separator-ornament">❧</span>
+    </div>
+
+    <!-- The Fossil Gallery -->
+    <section class="section">
+      <h2 class="text-center mb-4" style="font-family: var(--font-display);">Catálogo de Escenas</h2>
+      <p class="prose mx-auto text-center mb-8">
+        Momentos fundamentales de la película analizados desde la perspectiva de clase, códigos y transgresión.
+      </p>
+      <SceneGallery client:load />
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .text-center { text-align: center; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-8 { margin-bottom: 2rem; }
+  .mb-12 { margin-bottom: 3rem; }
+</style>

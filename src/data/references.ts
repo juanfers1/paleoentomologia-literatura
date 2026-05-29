@@ -1,8 +1,8 @@
 export interface Reference {
   id: string;
-  type: 'book' | 'chapter' | 'conference' | 'journal';
+  type: 'book' | 'chapter' | 'conference' | 'journal' | 'film';
   citation: string;
-  category: 'primary-literary' | 'critical-literary' | 'film' | 'methodological';
+  category: 'primary-literary' | 'critical-literary' | 'film-critical' | 'methodological';
   year: string;
 }
 
@@ -32,13 +32,6 @@ export const references: Reference[] = [
     citation: "Camus, A. (1942). Le mythe de Sisyphe. Gallimard."
   },
   {
-    id: 'bourdieu-1979',
-    type: 'book',
-    category: 'critical-literary',
-    year: '1979',
-    citation: "Bourdieu, P. (1979). La distinction: Critique sociale du jugement. Éditions de Minuit."
-  },
-  {
     id: 'moulin-1999',
     type: 'journal',
     category: 'critical-literary',
@@ -46,13 +39,27 @@ export const references: Reference[] = [
     citation: "Moulin, R. (1999). L'écriture plate chez Annie Ernaux. Revue des Lettres Modernes, 13-28."
   },
   
-  // Film
+  // Film & Social Critical
   {
-    id: 'nakache-toledano-2011',
-    type: 'book',
-    category: 'film',
+    id: 'intouchables-2011',
+    type: 'film',
+    category: 'film-critical',
     year: '2011',
-    citation: "Nakache, O., & Toledano, É. (Directores). (2011). Intouchables [Película]. Quad Productions; Gaumont. [VERIFICAR créditos de producción]"
+    citation: "Nakache, O., & Toledano, É. (Directores). (2011). Intouchables [Película]. Quad Productions; Gaumont."
+  },
+  {
+    id: 'bourdieu-1979',
+    type: 'book',
+    category: 'film-critical',
+    year: '1979',
+    citation: "Bourdieu, P. (1979). La distinction: Critique sociale du jugement. Éditions de Minuit."
+  },
+  {
+    id: 'pozzo-2001',
+    type: 'book',
+    category: 'film-critical',
+    year: '2001',
+    citation: "Pozzo di Borgo, P. (2001). Le second souffle. Bayard."
   },
 
   // Methodological

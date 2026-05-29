@@ -1,45 +1,52 @@
 // src/data/locations.ts
-// Datos de los dos mundos: la mansión del distrito 7 y la banlieue parisina
+// Datos de las locaciones de Intouchables — los dos mundos de París
 
-export interface LocationData {
+export interface Location {
   id: string;
   name: string;
-  fullName: string;
+  district: string;
   description: string;
   keyFeatures: string[];
-  socioContext: string;
+  symbolism: string;
+  // Positioning on the SVG map (percentages)
+  x: number;
+  y: number;
 }
 
-export const locations: LocationData[] = [
+export const locations: Location[] = [
   {
     id: 'mansion',
-    name: 'Distrito 7',
-    fullName: 'Mansión de Philippe, Distrito 7 de París',
+    name: 'Hôtel particulier — Distrito 7',
+    district: 'Rive Gauche, VIIe arrondissement',
     description:
-      'El hôtel particulier de Philippe, en el aristocrático distrito 7 de París, es un universo de refinamiento y silencio. Los salones decorados con obras de arte, los muebles de época y la biblioteca de volúmenes antiguos constituyen el escenario de una vida marcada por la inmovilidad física y el privilegio económico. Aquí, la cultura "legítima" —la ópera, la pintura abstracta, la música clásica— es el aire que se respira.',
+      'La mansión de Philippe, un hôtel particulier del siglo XVIII en uno de los barrios más exclusivos de París. Salones con molduras, cuadros de maestros, música clásica, una biblioteca inmensa. Un espacio donde el refinamiento cultural es el aire que se respira — y también la jaula dorada de un hombre paralizado.',
     keyFeatures: [
-      'Salones decorados con arte moderno y mobiliario Luis XVI',
-      'Galería privada de pintura (el cuadro vendido por 41.000 €)',
-      'Biblioteca con primeras ediciones de literatura francesa',
-      'Habitación médica equipada para tetraplejia',
-      'Códigos estrictos de etiqueta y protocolo doméstico',
+      'Arquitectura neoclásica, jardín interior',
+      'Colección de arte: pintura moderna, escultura',
+      'Ópera y música clásica como paisaje sonoro',
+      'Servicio doméstico, protocolos, distancia',
+      'El cuerpo inmóvil en un espacio diseñado para la contemplación',
     ],
-    socioContext: 'Aristocracia parisina, alta burguesía, herencia cultural legítima',
+    symbolism: 'La cultura legítima como privilegio y como prisión. El lugar que Ernaux nunca habitó y que Driss profana con su presencia.',
+    x: 42,
+    y: 45,
   },
   {
     id: 'banlieue',
-    name: 'Banlieue',
-    fullName: 'Banlieue parisina, entorno de Driss',
+    name: 'La banlieue — Cité',
+    district: 'Banlieue nord de Paris',
     description:
-      'La banlieue de donde proviene Driss es el reverso social de la mansión. Torres de vivienda social, calles donde el Estado parece ausente y una economía de la supervivencia configuran el horizonte cotidiano. Sin embargo, este espacio también es territorio de solidaridades familiares, de humor popular, de una vitalidad que contrasta con la solemnidad del distrito 7. La banlieue no es solo carencia: es un lugar con sus propios códigos, su propia lengua, su propia dignidad.',
+      'El barrio de Driss en la periferia parisina: bloques de vivienda social, escaleras ruidosas, música a todo volumen, la vida comunitaria en los pasillos. Un espacio que la sociedad mira con desconfianza pero que bulle de vitalidad, humor y códigos propios. De aquí se viene, y a aquí siempre se puede volver.',
     keyFeatures: [
-      'Torres de HLM (habitation à loyer modéré)',
-      'Redes familiares extendidas y solidaridad vecinal',
-      'Cultura callejera, hip-hop, lenguaje verlan',
-      'Vida comunitaria en espacios públicos compartidos',
-      'Frontera invisible con el París "oficial"',
+      'Grands ensembles: bloques de hormigón de los años 60-70',
+      'Música: Earth, Wind & Fire, Boogie Wonderland',
+      'Familia extendida, solidaridad y conflicto',
+      'Mirada policial, sospecha, control social',
+      'El cuerpo libre en un espacio que lo confina socialmente',
     ],
-    socioContext: 'Clase trabajadora, origen inmigrante, exclusión estructural',
+    symbolism: 'El "lugar" de Ernaux trasladado a la periferia contemporánea. El origen que marca, el espacio del que se es — no el que se elige.',
+    x: 68,
+    y: 35,
   },
 ];
 

@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title,
-  description = 'Ensayo digital que cruza la paleoentomología de los ecosistemas lagunares colombianos con L\'étranger de Camus y El lugar de Ernaux.',
+  description = 'Ensayo digital que cruza la película Intouchables (2011) con L\'étranger de Camus y La place de Ernaux en el contexto de Apreciación del Arte.',
   section = '',
   accentColor = '',
 } = Astro.props;
@@ -30,8 +30,8 @@ const fullTitle = section ? `${section} — ${title}` : title;
     <meta property="og:locale" content="es_CO" />
 
     <!-- SEO -->
-    <meta name="author" content="Gonzalo Abril Ramírez" />
-    <meta name="keywords" content="paleoentomología, páramo, Frontino, Cocuy, Camus, Ernaux, literatura, ciencia, ensayo digital" />
+    <meta name="author" content="Estudiante de Apreciación del Arte" />
+    <meta name="keywords" content="intouchables, cine, Camus, Ernaux, literatura, sociología, apreciación del arte, ensayo digital" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
 
     <title>{fullTitle}</title>

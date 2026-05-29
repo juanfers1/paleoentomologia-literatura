@@ -22,7 +22,7 @@ export default function BibliographyList({ references }: BibliographyListProps) 
   const categories = [
     { id: 'primary-literary', title: 'Obras literarias primarias' },
     { id: 'critical-literary', title: 'Contexto literario y crítico' },
-    { id: 'film', title: 'Referencia cinematográfica' },
+    { id: 'film-critical', title: 'Contexto cinematográfico y social' },
     { id: 'methodological', title: 'Referencia metodológica' },
   ];
 

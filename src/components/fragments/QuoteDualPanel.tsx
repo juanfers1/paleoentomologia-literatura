@@ -10,8 +10,8 @@ interface QuoteDualPanelProps {
   quote: string;
   quoteAuthor: string;
   quoteSource: string;
-  scientificText: string;
-  scientificSource: string;
+  filmText: string;
+  filmSource: string;
   author: 'camus' | 'ernaux';
 }
 
@@ -19,17 +19,17 @@ export default function QuoteDualPanel({
   quote,
   quoteAuthor,
   quoteSource,
-  scientificText,
-  scientificSource,
+  filmText,
+  filmSource,
   author,
 }: QuoteDualPanelProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef<HTMLDivElement>(null);
-  const scienceRef = useRef<HTMLDivElement>(null);
+  const filmRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      if (!quoteRef.current || !scienceRef.current) return;
+      if (!quoteRef.current || !filmRef.current) return;
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -45,7 +45,7 @@ export default function QuoteDualPanel({
         { opacity: 0, x: -40 },
         { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' }
       ).fromTo(
-        scienceRef.current,
+        filmRef.current,
         { opacity: 0, x: 40 },
         { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out' },
         '-=0.5'
@@ -63,7 +63,7 @@ export default function QuoteDualPanel({
     <section
       ref={containerRef}
       className={styles.container}
-      aria-label={`Cruce entre cita de ${quoteAuthor} y datos científicos`}
+      aria-label={`Cruce entre cita de ${quoteAuthor} y escena de la película`}
     >
       {/* Quote panel */}
       <div ref={quoteRef} className={`${styles.quotePanel} ${panelAccentClass}`}>
@@ -78,10 +78,10 @@ export default function QuoteDualPanel({
         </p>
       </div>
 
-      {/* Science panel */}
-      <div ref={scienceRef} className={styles.sciencePanel}>
-        <p className={styles.scienceText}>{scientificText}</p>
-        <span className={styles.scienceSource}>{scientificSource}</span>
+      {/* Film panel */}
+      <div ref={filmRef} className={styles.sciencePanel}>
+        <p className={styles.scienceText}>{filmText}</p>
+        <span className={styles.scienceSource}>{filmSource}</span>
       </div>
     </section>
   );

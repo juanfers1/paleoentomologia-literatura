@@ -9,9 +9,9 @@ const crosses = defineCollection({
     number: z.number(),
     filmConcept: z.string(),
     literaryConcept: z.string(),
+    filmDialogue: z.string().optional(),
     camusQuote: z.string().optional(),
     ernauxQuote: z.string().optional(),
-    filmScene: z.string().optional(),
     crossAnalysis: z.string(),
     catalogNumber: z.string(),
     references: z.array(z.object({

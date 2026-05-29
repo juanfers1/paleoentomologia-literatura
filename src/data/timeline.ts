@@ -1,9 +1,9 @@
 // src/data/timeline.ts
-// Línea temporal que integra eventos de la película, literarios e históricos
+// Línea temporal que integra eventos biográficos, cinematográficos, literarios e históricos
 
 export type TimelineCategory =
   | 'film'
-  | 'friendship'
+  | 'biographical'
   | 'literary'
   | 'historical';
 
@@ -16,32 +16,7 @@ export interface TimelineEvent {
 }
 
 export const timeline: TimelineEvent[] = [
-  // === Eventos de la película ===
-  {
-    year: 1993,
-    label: 'Accidente de Philippe',
-    description:
-      'Philippe Pozzo di Borgo, en cuya historia real se basa la película, sufre un accidente de parapente que lo deja tetrapléjico. La película Iniciará con este evento como punto de quiebre.',
-    category: 'film',
-  },
-  {
-    year: 2010,
-    label: 'Encuentro Philippe — Driss (historia real)',
-    description:
-      'Philippe Pozzo di Borgo contrata a Abdel Sellou, un joven de origen argelino del que nacerá el personaje de Driss. La relación auténtica entre ambos inspirará la película.',
-    category: 'film',
-    relatedCross: 'camus-01-autenticidad',
-  },
-  {
-    year: 2011,
-    label: 'Estreno de Intouchables',
-    description:
-      'La película se estrena en Francia el 2 de noviembre de 2011. Dirigida por Olivier Nakache y Éric Toledano, se convierte en uno de los mayores éxitos del cine francés.',
-    category: 'film',
-    relatedCross: 'ernaux-01-distancia',
-  },
-
-  // === Eventos literarios ===
+  // === Eventos literarios e históricos ===
   {
     year: 1913,
     label: 'Nacimiento de Albert Camus',
@@ -62,7 +37,14 @@ export const timeline: TimelineEvent[] = [
     description:
       "Albert Camus publica L'étranger (El extranjero) en Gallimard. La novela se convertirá en una de las obras más leídas del siglo XX y en el texto fundacional de la literatura del absurdo.",
     category: 'literary',
-    relatedCross: 'camus-03-libertad',
+    relatedCross: 'camus-01-outsider',
+  },
+  {
+    year: 1951,
+    label: 'Nacimiento de Philippe Pozzo di Borgo',
+    description:
+      'Philippe Pozzo di Borgo nace en una familia aristocrática parisina. Heredero de una fortuna industrial, crecerá rodeado de los códigos de la alta burguesía francesa.',
+    category: 'biographical',
   },
   {
     year: 1957,
@@ -75,14 +57,14 @@ export const timeline: TimelineEvent[] = [
     year: 1960,
     label: 'Muerte de Albert Camus',
     description:
-      'Albert Camus muere el 4 de enero en un accidente automovilístico en Villeblevin, Francia, a los 46 años.',
+      'Albert Camus muere el 4 de enero en un accidente automovilístico en Villeblevin, Francia, a los 46 años. En su cartera se encontró el manuscrito inacabado de Le premier homme.',
     category: 'literary',
   },
   {
     year: 1979,
     label: 'Bourdieu: La distinction',
     description:
-      'Pierre Bourdieu publica La distinction: Critique sociale du jugement, obra fundamental para comprender las dinámicas de clase que Ernaux explorará en La place y que la película escenifica en cada interacción entre Philippe y Driss.',
+      'Pierre Bourdieu publica La distinction: Critique sociale du jugement, obra clave para comprender las dinámicas de clase, el gusto y la «cultura legítima» que la película pondrá en escena.',
     category: 'historical',
     relatedCross: 'ernaux-03-codigos',
   },
@@ -90,24 +72,40 @@ export const timeline: TimelineEvent[] = [
     year: 1983,
     label: 'Publicación de La place',
     description:
-      'Annie Ernaux publica La place (El lugar) en Gallimard. El libro, escrito en «écriture plate», es un retrato sociológico del padre y una reflexión sobre la distancia de clase producida por la educación.',
+      "Annie Ernaux publica La place (El lugar) en Gallimard. El libro, escrito en «écriture plate», es un retrato sociológico del padre y una reflexión sobre la distancia de clase producida por la educación.",
     category: 'literary',
-    relatedCross: 'ernaux-01-distancia',
+    relatedCross: 'ernaux-01-clase',
   },
   {
-    year: 1984,
-    label: 'Premio Renaudot para La place',
+    year: 1993,
+    label: 'El accidente de Philippe',
     description:
-      'La place recibe el Prix Renaudot, uno de los principales premios literarios franceses, consolidando la reputación de Ernaux como escritora de la autoetnografía social.',
-    category: 'literary',
+      'Philippe Pozzo di Borgo sufre un accidente de parapente que lo deja tetrapléjico. Su vida cambia radicalmente: del hombre de acción al cuerpo inmóvil.',
+    category: 'biographical',
+    relatedCross: 'camus-03-cuerpo',
+  },
+  {
+    year: 1995,
+    label: 'Abdel Yasmin Sellou entra en la vida de Philippe',
+    description:
+      'Abdel Sellou, joven de origen argelino criado en la banlieue parisina, se convierte en el auxiliar de vida de Philippe. Comienza la relación que inspirará la película.',
+    category: 'biographical',
+    relatedCross: 'ernaux-04-transfuga',
+  },
+  {
+    year: 2001,
+    label: 'Le second souffle',
+    description:
+      'Philippe Pozzo di Borgo publica su autobiografía Le second souffle, narrando su relación con Abdel. El libro llamará la atención de los cineastas Nakache y Toledano.',
+    category: 'biographical',
   },
   {
     year: 2011,
-    label: 'El fenómeno Intouchables',
+    label: 'Estreno de Intouchables',
     description:
-      'La película recauda más de 400 millones de dólares en taquilla mundial y se convierte en la película francesa más vista internacionalmente. Su éxito trasciende fronteras de clase y cultura.',
+      'Olivier Nakache y Éric Toledano estrenan Intouchables. La película se convierte en un fenómeno: 19,4 millones de espectadores en Francia, tercera película francesa más taquillera de la historia.',
     category: 'film',
-    relatedCross: 'ernaux-04-transfuga',
+    relatedCross: 'camus-02-mirada',
   },
   {
     year: 2022,
@@ -115,7 +113,7 @@ export const timeline: TimelineEvent[] = [
     description:
       'Annie Ernaux recibe el Premio Nobel de Literatura «por el coraje y la agudeza clínica con que descubre las raíces, los extrañamientos y las restricciones colectivas de la memoria personal».',
     category: 'literary',
-    relatedCross: 'ernaux-02-lugar-destino',
+    relatedCross: 'ernaux-02-lugar',
   },
 ];
 

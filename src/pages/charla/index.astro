@@ -5,55 +5,55 @@ import Footer from '../../components/ui/Footer';
 import ReadingProgress from '../../components/ui/ReadingProgress';
 
 const sections = [
-  { id: 'introduccion', label: 'Introducción' },
-  { id: 'el-lugar', label: 'El Lugar (Frontino y Cocuy)' },
-  { id: 'la-metodologia', label: 'Metodología' },
-  { id: 'los-resultados', label: 'Los Resultados' },
+  { id: 'sinopsis', label: 'Sinopsis' },
+  { id: 'los-personajes', label: 'Los Personajes' },
+  { id: 'contexto-social', label: 'Contexto Social' },
+  { id: 'la-mirada', label: 'La Mirada Estética' },
   { id: 'reflexiones', label: 'Reflexiones Finales' }
 ];
 ---
 
-<Layout title="Charla Académica" section="Paleoentomología">
-  <Navigation client:load currentSection="003" />
+<Layout title="La Película" section="Intouchables">
+  <Navigation client:load currentSection="001" />
   <ReadingProgress client:load sections={sections} />
   
   <main class="container container-reading" style="padding-top: 8rem; position: relative;">
     
-    <span class="stratum-label">ESTRATO III: LA EVIDENCIA</span>
-    <h1 class="mb-4" style="font-family: var(--font-display); font-size: 3rem; color: var(--ink);">Paleoentomología de los ecosistemas lagunares</h1>
+    <span class="stratum-label">ESCENA II: EL CONTEXTO</span>
+    <h1 class="mb-4" style="font-family: var(--font-display); font-size: 3rem; color: var(--ink);">Intouchables (2011)</h1>
     <p class="prose mb-12" style="font-style: italic; color: var(--text-muted);">
-      Transcripción sintetizada de la ponencia base dictada en la Facultad de Ciencias Agrarias, Escuela de Biociencias.
+      Análisis de la obra cinematográfica para la cátedra de Apreciación del Arte.
     </p>
 
     <article class="prose">
-      <section id="introduccion" style="margin-bottom: 4rem;">
-        <h2>Introducción: Leer el lodo</h2>
-        <p class="drop-cap">L</p>
-        <p>a historia climática de la Tierra no está escrita con palabras, sino con polvo, polen y fragmentos microscópicos de vida. La paleoentomología es el arte de interpretar esa escritura cifrada a través de los restos fosilizados de insectos.</p>
-        <p>Durante los últimos miles de años, las lagunas de alta montaña han funcionado como trampas naturales. Cuando un escarabajo o un quironómido moría y caía al agua, las condiciones anóxicas del fondo impedían su descomposición total. Su exoesqueleto de quitina —uno de los biopolímeros más resistentes de la naturaleza— se preservaba, capa tras capa, milenio tras milenio.</p>
+      <section id="sinopsis" style="margin-bottom: 4rem;">
+        <h2>Sinopsis: El encuentro improbable</h2>
+        <p class="drop-cap">E</p>
+        <p>n París, un millonario tetrapléjico llamado Philippe busca un asistente y cuidador a domicilio. Pese a que se presentan candidatos muy cualificados, Philippe se decanta por Driss, un joven de origen senegalés procedente de los suburbios más pobres de la ciudad (la banlieue) que acaba de salir de la cárcel y que acude a la entrevista solo para conseguir la firma que le permita cobrar el subsidio de desempleo.</p>
+        <p>Lo que comienza como un experimento de Philippe —fascinado por la completa ausencia de piedad de Driss— se convierte gradualmente en una amistad inquebrantable que alterará las vidas y las certezas de ambos personajes, forzándolos a cruzar las fronteras invisibles pero letales de la clase social francesa.</p>
       </section>
 
-      <section id="el-lugar" style="margin-bottom: 4rem;">
-        <h2>El Lugar: Frontino y el Cocuy</h2>
-        <p>Para este estudio, nos hemos centrado en dos archivos excepcionales: el Páramo de Frontino en Antioquia y la Sierra Nevada del Cocuy en Boyacá. ¿Por qué estos lugares? Porque su altitud y su aislamiento los convierten en sensores climáticos hipersensibles.</p>
-        <p>A más de 4000 metros sobre el nivel del mar, las condiciones son implacables. Fluctuaciones térmicas diarias que van de la insolación abrasadora a las heladas nocturnas. Radiación UV extrema. Solo las especies con adaptaciones muy precisas pueden sobrevivir aquí. Y cuando el clima cambia —como ocurrió al final del Último Máximo Glacial— las especies no se adaptan de inmediato; migran siguiendo la temperatura, o se extinguen.</p>
+      <section id="los-personajes" style="margin-bottom: 4rem;">
+        <h2>Los Personajes: Parálisis y movimiento</h2>
+        <p>El diseño de personajes opera bajo un contraste absoluto. Philippe posee todo el capital económico y cultural imaginable, pero está confinado en un cuerpo inerte. Representa la "alta cultura" que Bourdieu describe: aquella que requiere una distancia de la necesidad material para poder existir de forma desinteresada.</p>
+        <p>Driss, por otro lado, es puro cuerpo, movimiento, espontaneidad y supervivencia. Carece de códigos culturales burgueses, pero posee una vitalidad que el entorno de Philippe ha perdido. Es la transgresión caminando por los pasillos encerados de un hotel particular del siglo XVIII.</p>
       </section>
 
-      <section id="la-metodologia" style="margin-bottom: 4rem;">
-        <h2>Metodología: La perforación del tiempo</h2>
-        <p>El trabajo de campo es, en muchos sentidos, una excavación arqueológica al revés. Extraemos columnas de sedimento ("testigos" o "cores") del fondo de las lagunas. Un cilindro de lodo de tres metros de largo puede contener 15,000 años de historia.</p>
-        <p>En el laboratorio, la escritura plana de la ciencia toma el control. Lavamos el lodo a través de mallas finísimas. Separamos la materia orgánica bajo el estereomicroscopio. Contamos cápsulas cefálicas de dípteros y élitros de coleópteros. Cada fragmento se clasifica, se cataloga y se asocia a una fecha obtenida por radiocarbono.</p>
+      <section id="contexto-social" style="margin-bottom: 4rem;">
+        <h2>Contexto Social: Los dos mundos</h2>
+        <p>La película es profundamente espacial. La distancia entre el Distrito 7 (donde reside Philippe) y la Cité de la banlieue (de donde viene Driss) no es solo geográfica, es abismal. Cada mundo tiene sus reglas de pertenencia.</p>
+        <p>Al igual que Annie Ernaux describe en <em>La place</em> cómo el espacio de origen determina el lenguaje, los gestos y las posibilidades vitales, <em>Intouchables</em> nos muestra el proceso doloroso, y a veces cómico, de intentar traducir los códigos de un mundo a otro. Driss es un "transfuga" temporal, operando en un universo que no fue diseñado para él.</p>
       </section>
 
-      <section id="los-resultados" style="margin-bottom: 4rem;">
-        <h2>Los Resultados: Indiferencia y estabilidad</h2>
-        <p>Los datos revelan una asombrosa resiliencia. Encontramos que muchas especies de coleópteros paramunos han mantenido una morfología estable durante períodos de enorme inestabilidad climática. A diferencia de los mamíferos, que evolucionan y se extinguen con relativa rapidez, estos insectos parecen responder a las glaciaciones simplemente desplazándose altitudinalmente.</p>
-        <p>Hay una cierta indiferencia estructural en su diseño. Han encontrado una forma que funciona y, frente al cataclismo, la mantienen.</p>
+      <section id="la-mirada" style="margin-bottom: 4rem;">
+        <h2>La Mirada Estética: Desnudar la cultura</h2>
+        <p>Uno de los temas centrales para la Apreciación del Arte es cómo la película trata a la "alta cultura". Cuando Driss asiste a la ópera o examina arte abstracto, su mirada desprovista del condicionamiento burgués resulta hilarante pero también profundamente reveladora.</p>
+        <p>Como afirmaría Meursault en <em>L'étranger</em>, a veces lo más escandaloso no es rebelarse, sino simplemente negarse a actuar la reverencia que la sociedad exige ante ciertos ídolos (sean estos ritos funerarios o lienzos manchados de rojo). La autenticidad de Driss despoja al arte de su aura intimidante y lo devuelve al plano de la experiencia humana básica.</p>
       </section>
 
       <section id="reflexiones" style="margin-bottom: 4rem;">
         <h2>Reflexiones Finales</h2>
-        <p>Al observar estas cápsulas cefálicas milenarias, es difícil no sentir la profunda distancia entre el tiempo humano y el tiempo geológico. Nosotros buscamos significado, narrativas, lecciones morales en la naturaleza. Pero el registro fósil es mudo respecto a nuestros valores. Simplemente atestigua lo que hubo, lo que sobrevivió y lo que pereció. Quizás en esa objetividad radical, en ese silencio sin adornos, radica la verdadera lección de la paleoecología.</p>
+        <p>A través de la comedia, <em>Intouchables</em> plantea preguntas fundamentales: ¿Es posible el encuentro genuino a través de la brecha de clase? ¿Qué significa verdaderamente tener empatía por el dolor del otro? Y más importante, ¿cómo nos salvan aquellos que se niegan a tenernos lástima? Estas son las interrogantes que exploraremos cruzando el film con Camus y Ernaux.</p>
       </section>
     </article>
 

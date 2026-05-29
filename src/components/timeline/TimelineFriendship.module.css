@@ -1,0 +1,258 @@
+.container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.lineWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  z-index: 1;
+}
+
+.lineBase {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bone);
+  opacity: 0.3;
+}
+
+.lineFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--philippe), var(--driss), var(--camus-red));
+  transform-origin: top;
+}
+
+.events {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.event {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.eventLeft {
+  justify-content: flex-end;
+  padding-right: 50%;
+}
+
+.eventRight {
+  justify-content: flex-start;
+  padding-left: 50%;
+}
+
+.dot {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  z-index: 3;
+}
+
+.content {
+  width: calc(100% - 3rem);
+  background: var(--paper-dark);
+  padding: 2rem;
+  border: 1px solid var(--bone);
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.eventLeft .content {
+  margin-right: 3rem;
+  text-align: right;
+}
+
+.eventLeft .content::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  right: -10px;
+  transform: translateY(-50%);
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--paper-dark);
+}
+
+.eventLeft .content::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  right: -11px;
+  transform: translateY(-50%);
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--bone);
+  z-index: -1;
+}
+
+.eventRight .content {
+  margin-left: 3rem;
+  text-align: left;
+}
+
+.eventRight .content::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  left: -10px;
+  transform: translateY(-50%);
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent var(--paper-dark) transparent transparent;
+}
+
+.eventRight .content::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  left: -11px;
+  transform: translateY(-50%);
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent var(--bone) transparent transparent;
+  z-index: -1;
+}
+
+/* Category Accents */
+.category-film { border-top: 3px solid var(--philippe); }
+.category-biographical { border-top: 3px solid var(--driss); }
+.category-literary { border-top: 3px solid var(--camus-red); }
+.category-historical { border-top: 3px solid var(--ink); }
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.eventLeft .meta {
+  flex-direction: row-reverse;
+}
+
+.year {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.categoryLabel {
+  text-transform: uppercase;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.crossLink {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dotted var(--bone);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eventLeft .crossLink {
+  justify-content: flex-end;
+}
+
+.crossIcon {
+  color: var(--text-light);
+}
+
+.crossLink a {
+  text-decoration: underline;
+  text-decoration-color: var(--bone);
+  text-underline-offset: 4px;
+}
+
+.crossLink a:hover {
+  text-decoration-color: var(--amber);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lineWrapper {
+    left: 2rem;
+  }
+  
+  .dot {
+    left: 2rem;
+  }
+  
+  .eventLeft, .eventRight {
+    padding: 0 0 0 4rem;
+    justify-content: flex-start;
+  }
+  
+  .content {
+    width: 100%;
+  }
+  
+  .eventLeft .content {
+    margin-right: 0;
+    text-align: left;
+  }
+  
+  .eventLeft .meta,
+  .eventLeft .crossLink {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  /* Reset left pointer for all */
+  .eventLeft .content::after {
+    left: -10px;
+    right: auto;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--paper-dark) transparent transparent;
+  }
+  
+  .eventLeft .content::before {
+    left: -11px;
+    right: auto;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--bone) transparent transparent;
+  }
+}

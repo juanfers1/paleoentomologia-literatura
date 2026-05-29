@@ -27,18 +27,18 @@ export default function Navigation({ currentSection = '000' }: NavigationProps) 
   const base = import.meta.env.BASE_URL;
   const links = [
     { href: base, label: 'Inicio' },
-    { href: `${base}charla`, label: 'Charla' },
-    { href: `${base}cruces`, label: 'Cruces' },
-    { href: `${base}lagunas`, label: 'Lagunas' },
-    { href: `${base}fragmentos`, label: 'Fragmentos' },
-    { href: `${base}referencias`, label: 'Referencias' },
+    { href: `${base}charla/`, label: 'La Película' },
+    { href: `${base}cruces/`, label: 'Cruces' },
+    { href: `${base}escenarios/`, label: 'Escenarios' },
+    { href: `${base}fragmentos/`, label: 'Fragmentos' },
+    { href: `${base}referencias/`, label: 'Referencias' },
   ];
 
   return (
     <nav className={`${styles.nav} ${!isVisible ? styles.navHidden : ''}`}>
       <div className={styles.container}>
-        <a href={base} className={styles.title}>Paleoentomología & Literatura</a>
-        
+        <a href={base} className={styles.title}>Intouchables & Literatura</a>
+
         <ul className={styles.links}>
           {links.map((link) => (
             <li key={link.href}>

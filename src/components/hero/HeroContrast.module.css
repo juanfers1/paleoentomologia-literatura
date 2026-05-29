@@ -20,24 +20,29 @@
   will-change: transform;
 }
 
-/* Base colors for strata */
+/* Base colors for contrast layers */
 .layer0 { background-color: var(--ink); height: 100vh; top: 0; z-index: 1; }
-.layer1 { background-color: #2a241b; height: 80vh; top: 20vh; z-index: 2; border-top: 1px solid rgba(255,255,255,0.05); }
-.layer2 { background-color: var(--moss); height: 65vh; top: 35vh; z-index: 3; border-top: 1px solid rgba(255,255,255,0.1); }
-.layer3 { background-color: var(--bog); height: 45vh; top: 55vh; z-index: 4; border-top: 1px solid rgba(255,255,255,0.15); }
-.layer4 { background-color: var(--rust); height: 25vh; top: 75vh; z-index: 5; border-top: 1px solid rgba(255,255,255,0.2); }
-.layer5 { background-color: var(--amber); height: 10vh; top: 90vh; z-index: 6; border-top: 1px solid rgba(255,255,255,0.3); }
+/* The world of Philippe (Blue) */
+.layer1 { background-color: var(--philippe); height: 80vh; top: 20vh; z-index: 2; border-top: 1px solid rgba(255,255,255,0.05); }
+/* The world of Driss (Orange/Amber) */
+.layer2 { background-color: var(--driss); height: 65vh; top: 35vh; z-index: 3; border-top: 1px solid rgba(255,255,255,0.1); }
+/* Literature: Ernaux (Dark Blue) */
+.layer3 { background-color: var(--ernaux-blue); height: 45vh; top: 55vh; z-index: 4; border-top: 1px solid rgba(255,255,255,0.15); }
+/* Literature: Camus (Red) */
+.layer4 { background-color: var(--camus-red); height: 25vh; top: 75vh; z-index: 5; border-top: 1px solid rgba(255,255,255,0.2); }
+/* Base floor */
+.layer5 { background-color: var(--paper-dark); height: 10vh; top: 90vh; z-index: 6; border-top: 1px solid rgba(255,255,255,0.3); }
 
 /* Text styles */
 .titleContainer {
   text-align: center;
-  color: #ffffff; /* Explicit white for max contrast */
+  color: #ffffff;
   position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  z-index: 100; /* Ensure it stays above strata */
+  z-index: 100;
   pointer-events: none;
 }
 
@@ -48,7 +53,7 @@
   line-height: 1;
   margin-bottom: 1rem;
   color: #ffffff;
-  text-shadow: 0 4px 24px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.5); /* Stronger shadow */
+  text-shadow: 0 4px 24px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .subtitle {
