@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://juanfers1.github.io',
-  base: '/apreciacion-del-arte',
+  base: '/paleoentomologia-literatura',
   trailingSlash: 'always',
   integrations: [react()],
   vite: {
